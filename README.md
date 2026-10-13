@@ -3,6 +3,7 @@
 </p>
 
 <h1 align="center">Piroba</h1>
+<h2 align="center>Website link: https://besika40k.github.io/Piroba/ </h1>
 
 <p align="center"><b>Put money on your promises. Friends stake USDC on their goals, and finishers take the pot.</b></p>
 
