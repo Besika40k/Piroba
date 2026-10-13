@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piroba: put money on your promises</title>
+<meta name="description" content="Piroba (პირობა, Georgian for promise) is a commitment app on Solana where friends stake USDC on their goals.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #101114;
+    --surface: #181a1f;
+    --line: #2a2d34;
+    --text: #F2F2EC;
+    --muted: #a3a49c;
+    --accent: #D7FF3F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1, h2, h3 { font-family: "Unbounded", system-ui, sans-serif; line-height: 1.15; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 22px 0; }
+  header .wrap { display: flex; align-items: center; gap: 10px; }
+  header svg { width: 34px; height: 34px; }
+  header span { font-family: "Unbounded", sans-serif; font-weight: 700; letter-spacing: .02em; }
+
+  .hero { padding: 56px 0 72px; display: grid; gap: 40px; align-items: center; }
+  .hero h1 { font-size: clamp(2.2rem, 7vw, 4.2rem); font-weight: 700; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { margin-top: 18px; font-size: 1.15rem; color: var(--muted); max-width: 34em; }
+  .hero .ka { color: var(--text); }
+  .hero-logo { width: min(320px, 70vw); justify-self: center; }
+  .btn {
+    display: inline-block; margin-top: 28px; padding: 14px 24px;
+    background: var(--accent); color: var(--bg); text-decoration: none;
+    font-weight: 700; border-radius: 999px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); margin-bottom: 32px; }
+  .grid { display: grid; gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .card .n { font-family: "Unbounded", sans-serif; color: var(--accent); font-size: .9rem; }
+  .card h3 { font-size: 1.15rem; margin: 8px 0 8px; }
+  .card p { color: var(--muted); font-size: .98rem; }
+
+  .status {
+    display: flex; gap: 14px; align-items: flex-start;
+    border: 1px solid var(--accent); border-radius: 16px; padding: 22px;
+  }
+  .dot { flex: none; width: 10px; height: 10px; margin-top: 9px; border-radius: 50%; background: var(--accent); }
+  .status p { color: var(--muted); }
+  .status strong { color: var(--text); }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+
+  @media (min-width: 720px) {
+    .hero { grid-template-columns: 1.4fr 1fr; padding: 80px 0 96px; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .roles { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 980px) {
+    .steps { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <svg viewBox="0 0 200 200" aria-hidden="true"><g transform="rotate(-35 100 100)"><path d="M100 54.97 A52 52 0 0 1 100 145.03 A52 52 0 0 1 100 54.97 Z" fill="#D7FF3F"/><circle cx="74" cy="100" r="52" fill="none" stroke="#F2F2EC" stroke-width="11"/><circle cx="126" cy="100" r="52" fill="none" stroke="#F2F2EC" stroke-width="11"/></g></svg>
+    <span>PIROBA</span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Put money on your <em>promises</em>.</h1>
+      <p>Friends stake USDC on their goals. Keep your promise and you get your stake back plus a share of what the others forfeited. <span class="ka">პირობა</span> means "promise" in Georgian.</p>
+      <a class="btn" href="https://github.com/Besika40k/Piroba">View on GitHub</a>
+    </div>
+    <svg class="hero-logo" viewBox="0 0 200 200" role="img" aria-label="Piroba logo: two interlocking rings"><g transform="rotate(-35 100 100)"><path d="M100 54.97 A52 52 0 0 1 100 145.03 A52 52 0 0 1 100 54.97 Z" fill="#D7FF3F"/><circle cx="74" cy="100" r="52" fill="none" stroke="#F2F2EC" stroke-width="11"/><circle cx="126" cy="100" r="52" fill="none" stroke="#F2F2EC" stroke-width="11"/></g></svg>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="grid steps">
+        <div class="card"><div class="n">01</div><h3>Create</h3><p>Pick a goal, a duration, a stake (e.g. 20 USDC) and a proof method. The rules lock when the first person joins.</p></div>
+        <div class="card"><div class="n">02</div><h3>Join</h3><p>Friends open a link and stake with a wallet or just an email. Fees are sponsored, so nobody needs SOL.</p></div>
+        <div class="card"><div class="n">03</div><h3>Prove</h3><p>Check in daily or weekly with a private zkTLS proof from apps like Strava, or with a photo the group votes on.</p></div>
+        <div class="card"><div class="n">04</div><h3>Settle</h3><p>After the deadline, finishers get their stake back plus a share of the forfeits, and a badge that can't be sold or transferred.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solana">
+    <div class="wrap">
+      <h2>Why Solana</h2>
+      <div class="grid roles">
+        <div class="card"><div class="n">THE BANK</div><h3>Nobody holds the money</h3><p>Stakes sit in a program-owned USDC escrow that no person, including us, can move.</p></div>
+        <div class="card"><div class="n">THE REFEREE</div><h3>Fair, visible rules</h3><p>The program verifies proofs and records votes and disputes on-chain, so everyone sees the same result.</p></div>
+        <div class="card"><div class="n">THE SCOREBOARD</div><h3>Proof you did it</h3><p>Every finisher gets a non-transferable Token-2022 badge, a permanent record that can't be bought.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="status">
+    <div class="wrap">
+      <div class="status">
+        <span class="dot" aria-hidden="true"></span>
+        <p><strong>Status: idea stage.</strong> This repo contains the design and a program skeleton; no logic is implemented yet. Nothing is deployed and no real money is involved. Built for the Solana Colosseum hackathon.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Piroba · by <a href="https://github.com/Besika40k">@Besika40k</a> and Rezo Darsavelidze · MIT License</div>
+</footer>
+
+</body>
+</html>

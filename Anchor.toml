@@ -1,0 +1,23 @@
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+# Placeholder program ID. Replaced with the real one on first deploy
+# (`anchor keys sync` after `anchor build`).
+[programs.localnet]
+piroba = "Fg6PaFpoGXkYsidMpWTK6W2BkZ7FEfcYkg476zPFsLnS"
+
+[programs.devnet]
+piroba = "Fg6PaFpoGXkYsidMpWTK6W2BkZ7FEfcYkg476zPFsLnS"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "echo \"No tests yet: logic is not implemented\""
